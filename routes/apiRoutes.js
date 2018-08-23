@@ -1,5 +1,6 @@
 var nodemailer = require('nodemailer');
-
+var keys = require("../keys.js")
+var email = keys.email
 
 
 module.exports = function (app) {
@@ -12,7 +13,7 @@ module.exports = function (app) {
             service: 'yahoo',
             auth: {
               user: 'ncortes68@yahoo.com',
-              pass: 'Puppylala1'
+              pass: email.pass
             }
           });
 
