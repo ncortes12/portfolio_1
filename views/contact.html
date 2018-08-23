@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-        <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                <title>Home</title>
-            
-            
-                <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-                    crossorigin="anonymous">
-                <link rel="stylesheet" href="assets/css/style.css">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                
-                
-                
-            </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
 
 <body>
-        <div class = "main">
-                <div class = "row header">
-                <div class = "col-sm-8">
-                <h1 id = "name">Nicole Cortes</h1>
-                </div>
-                <div class = "col-sm-4 nav">
-                <a href = "/">Home</a>
-                <a id = "link" href = "/portfolio">Portfolio</a>
-                <a id = "link" href = "/contact">Contact</a>
-                <a id = "link" href = "/resume">Resume</a>
-                </div>
-                </div>
-    
-        
+    <div class="main">
+        <div class="row header">
+            <div class="col-sm-8">
+                <h1 id="name">Nicole Cortes</h1>
+            </div>
+            <div class="col-sm-4 nav">
+                <a href="/">Home</a>
+                <a id="link" href="/portfolio">Portfolio</a>
+                <a id="link" href="/contact">Contact</a>
+                <a id="link" href="/resume">Resume</a>
+            </div>
+        </div>
+
+        <div class="container">
             <div class "row">
                 <div class="col-sm -3"></div>
                 <div class="col-sm-9">
@@ -55,40 +55,51 @@
                             <label for="exampleFormControlTextarea1">Message</label>
                             <textarea class="form-control message" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
-                        <button type="button" class="btn btn-outline-dark submit">Submit</button>
-    </form>
-    
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class = "footer">
-            <a href = "https://www.linkedin.com/in/nicole-cortes-3bb291163/">
-            <img src = "../assets/images/linkedin-logo.png">
-        </a>
-        <a href = "https://github.com/ncortes12">
-            <img src = "../assets/images/github-logo.png">
-        </a>
-        <a href = "/contact">
-            <img src = "../assets/images/close-envelope.png">
-        </a>
-        
-        
-        </div>
-<script>
-    $(".submit").on("click", function(event){
-        event.preventDefault();
-        var name = $(".name").val().trim();
-        var email = (".email").val().trim();
-        var subject = (".subject").val().trim();
-        var content = (".message").val().trim();
-        var message = "Name :" + name + " Email: " + email + " Subject: " + subject + " Message: " + content;
-        console.log(message);
-    })
-</script>
+                        <button type="button" id="submit" class="btn btn-outline-dark">Submit</button>
+                        </form>
 
-    
- 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://www.linkedin.com/in/nicole-cortes-3bb291163/">
+            <img src="../assets/images/linkedin-logo.png">
+        </a>
+        <a href="https://github.com/ncortes12">
+            <img src="../assets/images/github-logo.png">
+        </a>
+        <a href="/contact">
+            <img src="../assets/images/close-envelope.png">
+        </a>
+
+
+    </div>
+
+    <script>
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+            var name = $(".name").val().trim();
+            var email = $(".email").val().trim();
+            var subject = $(".subject").val().trim();
+            var content = $(".message").val().trim();
+            var message = {
+                name: name,
+                email: email,
+                subject: subject,
+                content: content
+            }
+            console.log(message);
+            $.ajax("api/email", {
+                type: "POST",
+                data: message
+            })
+        })
+    </script>
+
+
+
 </body>
 
 </html>
