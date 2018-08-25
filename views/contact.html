@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    
     <div class="main">
         <div class="row header">
             <div class="col-sm-8">
@@ -57,12 +58,14 @@
                         </div>
                         <button type="button" id="submit" class="btn btn-outline-dark">Submit</button>
                         </form>
-
+                        <div class = "response"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+
     <div class="footer">
         <a href="https://www.linkedin.com/in/nicole-cortes-3bb291163/">
             <img src="../assets/images/linkedin-logo.png">
@@ -81,9 +84,13 @@
         $("#submit").on("click", function (event) {
             event.preventDefault();
             var name = $(".name").val().trim();
+            $(".name").val("");
             var email = $(".email").val().trim();
+            $(".email").val("");
             var subject = $(".subject").val().trim();
+            $(".subject").val("");
             var content = $(".message").val().trim();
+            $(".message").val("");
             var message = {
                 name: name,
                 email: email,
@@ -94,6 +101,14 @@
             $.ajax("api/email", {
                 type: "POST",
                 data: message
+            }).then(function(data){
+                console.log(data)
+                if(data === "250 OK , completed"){
+                    $(".response").append("Hello " + name + ", <br> thank you for your message. <br>");
+                    $(".response").append(" I will be in contact within 24 hours.<br>");
+                    $(".response").append("Nicole Cortes")
+                     
+                }
             })
         })
     </script>

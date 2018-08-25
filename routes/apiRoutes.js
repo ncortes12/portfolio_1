@@ -29,8 +29,11 @@ module.exports = function (app) {
               console.log(error);
             } else {
               console.log('Email sent: ' + info.response);
+              res.send(info.response)
             }
-          });
+          })
 
     })
+      
+    
 }

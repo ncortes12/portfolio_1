@@ -37,10 +37,33 @@ h1{ font-weight: bold;
     font-family: 'Raleway', sans-serif;
     font-style: italic
 }
+.diff-font{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+
+}
+#small{
+    font-size:10px;
+    
+}
+#bigger{
+    margin-left: 1px;
+}
+
 
 #learn{
     margin-left:35%
    
+}
+.collapsed{
+    color:black
+}
+.response{
+    margin-top:50px;
+    margin-left:10px;
+    font-weight:bold;
+    text-align:center
 }
 
 .about{
@@ -77,57 +100,17 @@ h1{ font-weight: bold;
     padding: 50px;
 }
 
-.container{
-  
-}
 
 
 
-.resume{
-    margin-top: 125px;
-}
-.skills-text{
-    font-size:12px;
-}
 
-.icon{
-    position: absolute;
-    top:40%;
-    left: 90%;
-    font-size:28px;
-    color:rgb(152, 152, 158);
-    }
-.jobDesc{font-size:18px;
-    margin-bottom:0px;
-    color:rgb(152, 152, 158)
-        }
-.jobTittle {
-    margin-bottom:5px;
-}
 
 
 
 
 
 @media only screen and (max-width: 680px){
-#me {height:150px;
-width:150px;
-margin-left:85px;
-margin-top:40px;}
 
-#about{
-    margin-top:30px;
-    margin-left:15px;
-}
-.content{
-    margin-top:20px;
-}
-#hidden{
-    bottom:-50px;
-
-}
-.icon{left:80%;}
-.resume{margin-top:10px;}
 
 
 
