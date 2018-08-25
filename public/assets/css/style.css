@@ -111,9 +111,32 @@ h1{ font-weight: bold;
 
 @media only screen and (max-width: 680px){
 
-
-
-
+#name{margin-left:25%;}
+#link{font-size:12px;}
+#mobile{font-size:12px;}
+.nav{margin-left:12%}
+#welcome{display:none}
+#intro{margin-top:25%;
+font-size:14px;
+padding:15px;}
+#learn{
+margin-left:30%;}
+#aboutme{
+ text-decoration: none;
+ margin-left:15%
+}
+#about-text{
+    font-size:14px;
+    padding:15px
+}
+#work{margin-left:25%}
+.resume{margin-top:20%}
+.mb-2{
+    font-size:14px;}
+#UA-research{font-size:12px;}
+.container{margin-left:-25px;}
+    
+    
 
 
 }
