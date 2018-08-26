@@ -100,6 +100,29 @@ h1{ font-weight: bold;
     padding: 50px;
 }
 
+#burger{
+    height: 200px;
+    width:300px;
+    margin-left:20px;
+    margin-bottom: 20px;
+}
+
+.project{
+    
+    margin-top:100px;
+    margin-left:50px;
+    text-align: center
+}
+#description{
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+}
+
+#projecttitle{
+    
+    
+    font-size:24px;
+}
 
 
 
